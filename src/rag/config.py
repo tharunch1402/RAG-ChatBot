@@ -1,16 +1,33 @@
 import os
+
 from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class Settings:
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-    # Api_key & Model 
-    OPENAI_API_KEY  = os.getenv("OPENAI_API_KEY")
-    MODEL = 'gpt-4o-mini'
+    # Models
+    EMBEDDING_MODEL = "text-embedding-3-small"
+    LLM_MODEL = "gpt-4o-mini"
 
-    # Embeddings
-    embedding_model = 'text-embedding-3-small'
+    # Chunking
+    CHUNK_SIZE = 500
+    CHUNK_OVERLAP = 50
+
+    # Vector database
+    PERSIST_DIR = "chroma_db"
+    COLLECTION_NAME = "Production_RAG"
+
+    # Retrieval: how many chunks to send to the LLM
+    TOP_K = 3
+
+    # LLM parameters
+    TEMPERATURE = 0
+
+    # Embedding size
+    EMBEDDING_SIZE = 1536
 
 
 settings = Settings()
