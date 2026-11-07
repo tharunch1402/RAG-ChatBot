@@ -10,4 +10,7 @@ class Settings:
     MODEL = 'gpt-4o-mini'
 
     # Embeddings
-    
+    embedding_model = 'text-embedding-3-small'
+
+
+settings = Settings()
